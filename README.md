@@ -80,4 +80,5 @@ MIT License
 
 ## Contributors
 This app was created by Aidan Reynolds 
+
 Github: https://github.com/areyno20
