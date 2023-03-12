@@ -20,26 +20,27 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'JATE',
-        template: './src/index.html',
-        filename: 'index.html',
-        chunks: ['main'],
+        template: './index.html',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'sw.js',
       }),
       new WebpackPwaManifest({
-        name: 'JATE',
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
         short_name: 'JATE',
         description: 'Offline capable text editor',
         background_color: '#01579b',
         theme_color: '#ffffff',
         start_url: '/',
-        display: 'standalone',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons")
           },
         ],
       }),
